@@ -1,0 +1,15 @@
+[project]
+name = "pytest-metaexport"
+version = "0.1.0"
+description = "Pytest plugin for exporting custom test metadata to JSON."
+authors = [ ]
+license = "MIT"
+requires-python = ">=3.7"
+dependencies = ["pytest"]
+
+[project.entry-points.pytest11]
+metaexport = "pytest_metaexport.pytest_metaexport"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
