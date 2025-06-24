@@ -6,7 +6,7 @@ authors = [ ]
 license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
-    "pytest>=8.4.0",
+    "pytest>=7.1.0",
     "pandas>=2.3.0",
     "kaleido>=1.0.0",
     "Jinja2>=3.1.6",
