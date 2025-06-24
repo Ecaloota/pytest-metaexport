@@ -1,6 +1,6 @@
 [project]
 name = "pytest-metaexport"
-version = "0.1.0"
+version = "0.1.1"
 description = "Pytest plugin for exporting custom test metadata to JSON."
 authors = [ ]
 license = "MIT"
