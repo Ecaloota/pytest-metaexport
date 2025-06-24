@@ -4,11 +4,23 @@ version = "0.1.0"
 description = "Pytest plugin for exporting custom test metadata to JSON."
 authors = [ ]
 license = "MIT"
-requires-python = ">=3.7"
-dependencies = ["pytest"]
+requires-python = ">=3.12"
+dependencies = [
+    "pytest>=8.4.0",
+    "pandas>=2.3.0",
+    "kaleido>=1.0.0",
+    "Jinja2>=3.1.6",
+    "weasyprint>=65.1",
+    "pydantic>=2.11.7",
+    "pydantic_settings>=2.10.0",
+]
 
 [project.entry-points.pytest11]
 metaexport = "pytest_metaexport.pytest_metaexport"
+
+[project.urls]
+Homepage = "https://github.com/Ecaloota/pytest-metaexport"
+Repository = "https://github.com/Ecaloota/pytest-metaexport"
 
 [build-system]
 requires = ["setuptools", "wheel"]

@@ -1,12 +1,12 @@
 # Pytest MetaExport Plugin
 
-This `pytest` plugin allows you to attach custom metadata to your test functions using dynamic decorators, then exports a JSON report at the end of the test session containing metadata and execution results for all tests.
+This `pytest` plugin allows you to attach custom metadata to your test functions using dynamic decorators, then exports a JSON report and PDF at the end of the test session containing metadata and execution results for all tests.
 
 ## Features
 
 - Add arbitrary metadata to test functions using dynamic decorators.
 - Collect test outcome data: passed, failed, and skipped.
-- Export a full JSON report summarizing the test run and metadata.
+- Export a full JSON report and PDF summarizing the test run and metadata.
 - Track execution duration for each test.
 
 ---
