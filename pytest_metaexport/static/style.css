@@ -1,0 +1,74 @@
+body {
+    font-family: sans-serif;
+    margin: 2em;
+}
+h1, h2 {
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.3em;
+}
+.chart-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.chart-container {
+    flex: 1 1 300px;
+    max-width: 400px;
+    text-align: center;
+}
+/* #summary-pie-chart {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+} */
+.chart-container img {
+    width: 100%;
+    max-height: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+.test-entry {
+    border: 1px solid #ddd;
+    padding: 0.7em;
+    margin-bottom: 1.2em;
+    border-left: 5px solid #999;
+}
+.test-entry h4 {
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+}
+.test-entry p {
+    margin-top: 0;
+    margin-bottom: 0.4em;
+}
+.status-Passed { border-color: green; }
+.status-Failed { border-color: red; }
+.status-Skipped { border-color: rgb(217, 165, 33); }
+.nodeid,
+.duration {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+.tags {
+    color: #555;
+}
+.tags span {
+    display: inline-block;
+    background-color: #eee;
+    color: #333;
+    padding: 0.2em 0.5em;
+    margin: 0.2em;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+.description {
+    margin-top: 0.5em;
+}
+.extra-field {
+    margin-top: 0.4em;
+}

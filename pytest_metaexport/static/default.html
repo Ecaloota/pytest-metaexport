@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ project_title }} Test Report</title>
+    <link rel="stylesheet" href="{{ css_path }}">
+</head>
+<body>
+
+<h1>{{ project_title }} Test Report</h1>
+<p>{{ run_date }}</p>
+
+<!-- <h2>Test Summary</h2> -->
+
+<div class="chart-row">
+    <!-- Pie chart -->
+    <div class="chart-container" id="summary-pie-chart">
+        <img src="{{ summary_pie_chart_path }}" alt="Summary Pie Chart" />
+    </div>
+
+    <!-- Bar chart -->
+    <div class="chart-container" id="duration-bar-chart">
+        <img src="{{ duration_bar_chart_path }}" alt="Duration Bar Chart" />
+    </div>
+
+    <!-- Line chart -->
+    <div class="chart-container" id="status-line-chart">
+        <img src="{{ status_line_chart_path }}" alt="Status Line Chart" />
+    </div>
+</div>
+
+<!-- <h2>Detailed Test Report</h2> -->
+
+<!-- {% for test in tests %} -->
+    <!-- {% include "test_entry.html" %} -->
+<!-- {% endfor %} -->
+
+{% for tag, tests_in_tag in tagged_tests.items() %}
+    <h2>Tag: {{ tag }}</h2>
+    <div class="chart-container", id="tag-{{ tag }}-chart">
+        <img src="{{ tagged_figs[tag] }}" alt="Tag {{ tag }} Chart" />
+    </div>
+    <div class="tag-section">
+        {% for test in tests_in_tag %}
+            {% include "test_entry.html" %}
+        {% endfor %}
+    </div>
+{% endfor %}
+
+</body>
+</html>

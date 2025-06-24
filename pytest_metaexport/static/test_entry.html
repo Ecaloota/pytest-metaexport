@@ -1,0 +1,32 @@
+<div class="test-entry status-{{ test.status }}">
+    <h4>{{ test.title }} <span style="float: right;">Status: {{ test.status }}</span></h4>
+    <p class="duration">Duration: {{ test.duration }}s</p>
+    <p class="nodeid">NodeID: {{ test.nodeid }}</p>
+
+    {% if test.tags %}
+        <div class="tags"> Tags:
+            {% for tag in test.tags %}
+                <span>{{ tag }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="description">
+        <strong>Description:</strong> {{ test.description }}
+    </div>
+
+    {% for key, value in test.items() %}
+        {% if key not in ['title', 'status', 'duration', 'nodeid', 'tags', 'description'] %}
+            <div class="extra-field">
+                <strong>{{ key|replace('_', ' ')|capitalize }}:</strong>
+                {% if value is iterable and value is not string %}
+                    {% for item in value %}
+                        <span>{{ item }}</span>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {{ value }}
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
