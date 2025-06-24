@@ -3,7 +3,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, PackageLoader
 from weasyprint import HTML  # type: ignore[import-untyped]
 
 from pytest_metaexport.schema import MetaExportReport, MetaExportRun, Test
@@ -67,12 +67,7 @@ def report_to_pdf(report: MetaExportReport, loc: str) -> None:
     """Convert MetaExportReport to PDF using WeasyPrint."""
 
     # Setup Jinja2
-    env = Environment(
-        loader=FileSystemLoader(
-            searchpath=os.path.dirname(settings.template_path) or "."
-        ),
-        autoescape=select_autoescape(["html", "xml"]),
-    )
+    env = Environment(loader=PackageLoader("pytest_metaexport", "static"))
     template = env.get_template(os.path.basename(settings.template_path))
 
     # Render HTML
