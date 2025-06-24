@@ -1,6 +1,6 @@
 [project]
 name = "pytest-metaexport"
-version = "0.1.1"
+version = "0.1.2"
 description = "Pytest plugin for exporting custom test metadata to JSON."
 authors = [ ]
 license = "MIT"
@@ -13,10 +13,18 @@ dependencies = [
     "weasyprint>=65.1",
     "pydantic>=2.11.7",
     "pydantic_settings>=2.10.0",
+    "plotly>=6.1.1",
+    "kaleido>=1.0.0"
 ]
 
 [project.entry-points.pytest11]
 metaexport = "pytest_metaexport.pytest_metaexport"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"pytest_metaexport" = ["static/*.html", "static/*.css"]
 
 [project.urls]
 Homepage = "https://github.com/Ecaloota/pytest-metaexport"
